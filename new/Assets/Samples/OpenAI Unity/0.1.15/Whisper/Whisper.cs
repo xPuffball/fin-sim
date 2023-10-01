@@ -16,6 +16,7 @@ namespace OpenAI
 
         [SerializeField] private RectTransform sent;
         [SerializeField] private RectTransform received;
+
         private float height;
         [SerializeField] private ScrollRect scroll;
         private List<ChatMessage> messages = new List<ChatMessage>();
@@ -97,8 +98,8 @@ namespace OpenAI
             
             var req = new CreateAudioTranscriptionsRequest
             {
-                FileData = new FileData() {Data = data, Name = "audio.wav"},
-                // File = Application.persistentDataPath + "/" + fileName,
+                //FileData = new FileData() {Data = data, Name = "audio.wav"},
+                File = Application.persistentDataPath + "/" + fileName,
                 Model = "whisper-1",
                 Language = "en"
             };
